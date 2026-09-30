@@ -1,0 +1,32 @@
+name: Deploy Absensi ELITE
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy ke InfinityFree
+    runs-on: ubuntu-latest
+
+    environment: FTP
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v6
+
+      - name: Deploy melalui FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
+          port: 21
+          server-dir: /htdocs/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            download_extracted_preview/**
