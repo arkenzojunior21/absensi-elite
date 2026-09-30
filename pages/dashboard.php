@@ -192,7 +192,7 @@ if(isset($_POST['absen'])){
         <div class="form-group">
           <label class="form-label" for="fotoInput">Unggah Foto Selfie Kehadiran</label>
           <input type="file" id="fotoInput" name="foto" accept="image/*" capture="camera" class="file-upload-box" required>
-          <p class="form-hint">Ambil foto selfie langsung dengan kamera perangkat seba.</p>
+          <p class="form-hint">Ambil foto selfie langsung dengan kamera perangkat sebagai bukti kehadiran fisik.</p>
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 0.65rem; margin-top: 1.25rem;">
